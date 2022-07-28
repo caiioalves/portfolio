@@ -8,22 +8,26 @@ import './styles/light.css'
 import { useState } from 'react';
 
 function App() {
-  const [ mode, setMode ] = useState('dark')
+  const [ mode, setMode ] = useState('light')
+  const [ menu, setMenu ] = useState(false)
 
-  function handleClick() {
-    if( mode === 'dark') {
+  function handleClickMode() {
+    if(mode === 'dark') {
       setMode('light')
     } else {
       setMode('dark')
     }
-    console.log(mode)
+  };
+
+  function handleClickMenu() {
+      setMenu(!menu)
   };
     
   return (
     <div className={`body-${mode}`}>
       <header className={`header-${mode}`}>
         <div className='button'>
-          <button className={`buttons-${mode}`}>
+          <button onClick={ handleClickMenu } className={`buttons-${mode}`}>
             <HiMenu className={`icons-${mode}`} />
           </button>
         </div>
@@ -33,11 +37,11 @@ function App() {
         <div>
           {
             mode === 'dark' ? (
-              <button onClick={ handleClick } className={`buttons-${mode}`}>
+              <button onClick={ handleClickMode } className={`buttons-${mode}`}>
                 <MdOutlineLightMode className={`icons-${mode}`} />
               </button>
             ) : (
-              <button onClick={ handleClick } className={`buttons-${mode}`}>
+              <button onClick={ handleClickMode } className={`buttons-${mode}`}>
                 <MdOutlineNightlight className={`icons-${mode}`} />
               </button>
             )
@@ -45,6 +49,9 @@ function App() {
         </div>
       </header>
       <main>
+        <div className={`navbar-${menu}-${mode}`}>
+          <h1>teste</h1>
+        </div>
         <div className={`profile-${mode}`}>
           <p>Olá, eu me chamo Caio Alexandre, e sou <span><strong>DESENVOLVEDOR WEB!</strong></span></p>
           <img src={ imgProfile } alt='' />

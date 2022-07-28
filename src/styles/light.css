@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    box-shadow: 0 0 0 1px rgba(207, 204, 204, 0.418);
+    border-bottom: 1px solid rgba(207, 204, 204, 0.418);
   }
   
   .button {
@@ -47,6 +47,26 @@
     transition:  all 0.8s ease;
   }
 
+  .navbar-false-light {
+    position: fixed;
+    background-color: rgb(207, 204, 204);
+    height: 100%;
+    width: 40%;
+    left: -100%;
+    margin-top: -110px;
+    transition: all 1s;
+  }
+
+  .navbar-true-light {
+    position: fixed;
+    background-color: rgb(207, 204, 204);
+    height: 100%;
+    width: 40%;
+    left: 0;
+    margin-top: -110px;
+    transition: all 1s;
+  }
+
   .profile-light {
     width: 60%;
     height: 450px;
@@ -56,7 +76,7 @@
     font-size: 40px;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 0 0 0 rgba(207, 204, 204, 0.418);
+    border-right: 2px solid rgba(207, 204, 204, 0.418);
   }
   
   .profile-light > p > span {
@@ -66,7 +86,7 @@
   .profile-light > img {
     width: 250px;
     border-radius: 50%;
-    border: 3px solid #646464;
+    border: 3px solid rgb(207, 204, 204);
     transition:  all 1s ease;
     margin-top: 5%;
   }
