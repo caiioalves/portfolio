@@ -1,0 +1,77 @@
+.body-light {
+    background-color: whitesmoke;
+    color: #262626;
+    height: 100vh;
+    transition:  all 0.8s ease;
+} 
+
+.buttons-light {
+    border: none;
+    width: 50px;
+    height: 40px;
+    background-color: rgb(207, 204, 204);
+    border-radius: 2px;
+    transition:  all 0.8s ease;
+  }
+  
+  .buttons-light:hover {
+    background-color: #949090;
+    transition:  all 0.8s ease;
+  }
+  
+  .icons-light {
+    color: #262626;
+    width: 40px;
+    height: 30px;
+  }
+  
+  .header-light {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 0 0 1px rgba(207, 204, 204, 0.418);
+  }
+  
+  .button {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .name {
+    font-size: 20px;
+    transition:  all 0.8s ease;
+  }
+  
+  .name:hover {
+    color: #646464;
+    transition:  all 0.8s ease;
+  }
+
+  .profile-light {
+    width: 60%;
+    height: 450px;
+    margin-top: 8%;
+    margin-left: 70px;
+    padding: 20px;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 0 0 rgba(207, 204, 204, 0.418);
+  }
+  
+  .profile-light > p > span {
+    color: #F2C438;
+  }
+  
+  .profile-light > img {
+    width: 250px;
+    border-radius: 50%;
+    border: 3px solid #646464;
+    transition:  all 1s ease;
+    margin-top: 5%;
+  }
+  
+  .profile-light > img:hover {
+    border: 3px solid #F2C438;
+    transition:  all 1s ease;
+  }
