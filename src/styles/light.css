@@ -1,7 +1,8 @@
 .body-light {
-    background-color: whitesmoke;
+    background-color: #F2EFE9;
     color: #262626;
     height: 100vh;
+    width: 100%;
     transition:  all 0.8s ease;
 } 
 
@@ -15,7 +16,7 @@
   }
   
   .buttons-light:hover {
-    background-color: #949090;
+    background-color: #f5a30c;
     transition:  all 0.8s ease;
   }
   
@@ -37,61 +38,63 @@
     justify-content: space-between;
   }
   
-  .name {
+  .name-light {
     font-size: 20px;
-    transition:  all 0.8s ease;
-  }
-  
-  .name:hover {
-    color: #646464;
+    display: flex;
+    width: 22%;
+    justify-content: space-between;
+    align-items: center;
     transition:  all 0.8s ease;
   }
 
   .navbar-false-light {
     position: fixed;
+    display: flex;
+    justify-content: center;
     background-color: rgb(207, 204, 204);
+    background-color: #f5a30c;
     height: 100%;
-    width: 40%;
-    left: -100%;
-    margin-top: -110px;
+    width: 20%;
+    right: -21%;
     transition: all 1s;
   }
 
   .navbar-true-light {
+    font-size: 20px;
     position: fixed;
+    display: flex;
+    justify-content: center;
     background-color: rgb(207, 204, 204);
+    background-color: #f5a30c;
     height: 100%;
-    width: 40%;
-    left: 0;
-    margin-top: -110px;
-    transition: all 1s;
+    width: 20%;
+    right: 0;
+    transition: all 0.4s;
   }
 
   .profile-light {
+    border-radius: 20px;
     width: 60%;
     height: 450px;
-    margin-top: 8%;
-    margin-left: 70px;
+    margin-top: 6%;
     padding: 20px;
-    font-size: 40px;
+    font-size: 29px;
     display: flex;
     flex-direction: column;
-    border-right: 2px solid rgba(207, 204, 204, 0.418);
+    align-items: center;
+    text-align: center;
   }
   
   .profile-light > p > span {
-    color: #F2C438;
+    color: #f5a30c;
   }
   
   .profile-light > img {
-    width: 250px;
+    width: 25%;
     border-radius: 50%;
-    border: 3px solid rgb(207, 204, 204);
+    border: 2px solid #26262648;
     transition:  all 1s ease;
     margin-top: 5%;
-  }
-  
-  .profile-light > img:hover {
-    border: 3px solid #F2C438;
-    transition:  all 1s ease;
+    align-self: center;
+    margin-bottom: 4%;
   }
