@@ -1,13 +1,13 @@
 import { HiMenu } from 'react-icons/hi';
 import { MdOutlineLightMode } from 'react-icons/md'
 import { MdOutlineNightlight } from 'react-icons/md'
-import { GiRing } from 'react-icons/gi'
 import { CgClose } from 'react-icons/cg'
 import imgProfile  from '../images/caio.jpg'
 import '../App.css';
 import '../styles/dark.css'
 import '../styles/light.css'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [ mode, setMode ] = useState('light');
@@ -30,8 +30,7 @@ function Home() {
     <div className={`body-${mode}`}>
       <header className={`header-${mode}`}>
       <div className={`name-${mode}`}>
-        <GiRing className={`icons-${mode}`} />
-        <h2>Caio Alexandre</h2>
+        <h2>{`< Caio Alexandre />`}</h2>
       </div>
         <div className='button'>
           {
@@ -56,16 +55,27 @@ function Home() {
         </div>
       </header>
       <main>
-        <div className={`navbar-${menu}-${mode}`}>
-          <ul className='links'>
-            <li>Home</li>
-            <li>Sobre</li>
-            <li>Contato</li>
-          </ul>
-        </div>
         <div className={`profile-${mode}`}>
           <img src={ imgProfile } alt='' />
-          <p>Olá, eu me chamo Caio Alexandre, e sou <span><strong>DESENVOLVEDOR WEB!</strong></span></p>
+          <h1>Olá, eu me chamo Caio</h1>
+          <p><strong>Desenvolvedor Web Front-End</strong></p>
+        </div>
+        <div className={`profile-${mode}`}>
+          <h2>Sobre Mim</h2>
+          <p>S</p>
+        </div>
+        <div className={`navbar-${menu}-${mode}`}>
+          <ul className='links'>
+            <li className="links-mode">
+              <Link className='redirect' to='/login'>Home</Link>
+            </li>
+            <li className="links-mode">
+            <Link className='redirect' to='/login'>Sobre</Link>
+            </li>
+            <li className="links-mode">
+            <Link className='redirect' to='/login'>Contato</Link>
+            </li>
+          </ul>
         </div>
       </main>
     </div>

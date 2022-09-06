@@ -3,7 +3,7 @@
     background-position: center;
     background-size: cover;
     color: whitesmoke;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     transition:  all 0.8s ease;
   }
@@ -31,12 +31,16 @@
   .header-dark {
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
     padding: 10px;
+    backdrop-filter: blur(10px);
     border-bottom : 1px solid rgba(255, 255, 255, 0.041);
   }
   
   .button {
     display: flex;
+    margin-right: 2%;
     width: 10%;
     justify-content: space-between;
   }
@@ -44,7 +48,7 @@
   .name-dark {
     font-size: 20px;
     display: flex;
-    width: 22%;
+    width: 30%;
     justify-content: space-between;
     align-items: center;
     transition:  all 0.8s ease;
@@ -53,6 +57,7 @@
   .navbar-false-dark {
     position: fixed;
     display: flex;
+    margin-top: 4.5%;
     justify-content: center;
     background-color: rgb(59, 59, 59);
     background-color: #F2C438;
@@ -64,9 +69,10 @@
   }
 
   .navbar-true-dark {
-    font-size: 20px;
+    font-size: 21px;
     position: fixed;
     display: flex;
+    margin-top: 4.5%;
     justify-content: center;
     background-color: rgb(59, 59, 59);
     background-color: #F2C438;
@@ -79,27 +85,35 @@
   
   .profile-dark {
     border-radius: 20px;
-    width: 60%;
+    width: 50%;
     height: 450px;
     margin-top: 6%;
     padding: 20px;
-    font-size: 29px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .profile-dark > p > span {
-    color: #F2C438;
-  }
   
   .profile-dark > img {
     width: 25%;
     border-radius: 50%;
     border: 2px solid rgb(150, 145, 145);
     transition:  all 1s ease;
-    margin-top: 5%;
+    margin-top: 10%;
     align-self: center;
     margin-bottom: 4%;
+  }
+
+  .links-dark {
+    padding: 4px;
+  }
+
+  .links-dark:hover {
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #262626;
+    color: whitesmoke;
   }
