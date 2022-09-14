@@ -54,7 +54,6 @@ main {
 
 .background {
   height: 100vh;
-  background-image: url('./images/door.jpg');
 }
 
 .scene {
@@ -62,8 +61,47 @@ main {
 }
 
 
-.scene button {
+.btn-scene {
   position: fixed;
   right: 20px;
   top: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.icon-question {
+  width: 80%;
+  height: 80%;
+}
+
+.input-scene {
+position: fixed;
+flex-direction: column;
+display: flex;
+align-items: center;
+justify-content: space-around;
+top: 40%;
+left: 30%;
+background-color: rgba(255, 255, 255, 0.253);
+backdrop-filter: blur(5px);
+width: 40%;
+height: 30%;
+border-radius: 30px;
+}
+
+.scene input {
+  text-align: center;
+}
+
+.model {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: 10%;
+  left: 58%;
 }

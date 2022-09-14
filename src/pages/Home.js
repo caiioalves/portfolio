@@ -1,3 +1,4 @@
+import Spline from '@splinetool/react-spline';
 import { HiMenu } from 'react-icons/hi';
 import { MdOutlineLightMode } from 'react-icons/md'
 import { MdOutlineNightlight } from 'react-icons/md'
@@ -6,15 +7,40 @@ import imgProfile  from '../images/caio.jpg'
 import '../App.css';
 import '../styles/dark.css'
 import '../styles/light.css'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
 
 function Home() {
   const [ mode, setMode ] = useState('light');
   const [ menu, setMenu ] = useState(false);
 
+  const gandalf = useRef();
+  const balrog = useRef()
+
+  function onLoad(spline) {
+    const objGandalf = spline.findObjectById('3de10e1b-89fd-41ef-8806-0af03de3e680');
+    const objBalrog = spline.findObjectById('775607fc-0002-4a3c-83bf-08628c9a0218');
+
+    console.log(objGandalf);
+    gandalf.current = objGandalf;
+    balrog.current = objBalrog;
+  }
+
+  function moveObj() {
+    if(mode === 'light') {
+      gandalf.current.position.y += 11000;
+      balrog.current.position.y += -11000;
+    } else {
+      gandalf.current.position.y += -11000;
+      balrog.current.position.y += 11000;
+    }
+  }
+
 
   function handleClickMode() {
+    moveObj()
     if(mode === 'dark') {
       setMode('light')
     } else {
@@ -40,7 +66,7 @@ function Home() {
               </button>
                          
             ) : (
-              <button onClick={ handleClickMode } className={`buttons-${mode}`}>
+              <button onClick={ handleClickMode} className={`buttons-${mode}`}>
                 <MdOutlineLightMode className={`icons-${mode}`} />
               </button>
             )
@@ -60,9 +86,12 @@ function Home() {
           <h1>Olá, eu me chamo Caio</h1>
           <p><strong>Desenvolvedor Web Front-End</strong></p>
         </div>
+        <div className='model'>
+          <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={ onLoad } />
+        </div>
         <div className={`profile-${mode}`}>
           <h2>Sobre Mim</h2>
-          <p>S</p>
+          <p>Olá,eu me chamo Caio, tenho 19 anos e sou natural de Belo Horizonte/MG, atualmente eu curso desenvolvimento web na Trybe. Desde pequeno sempre gostei muito de criar e inventar coisas, creio que por isso eu goste tanto da programação, uma vez que ela nos possibilita tanto criar quanto aperfeiçoar codigos. Quero me tornar um bom programador e seguir exercendo essa vontate de criar, sei que já estou trilhando esse caminho. </p>
         </div>
         <div className={`navbar-${menu}-${mode}`}>
           <ul className='links'>
