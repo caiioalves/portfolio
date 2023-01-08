@@ -1,4 +1,4 @@
-.body-dark {
+/* .body-dark {
     background-color: #262626;
     background-position: center;
     background-size: cover;
@@ -84,10 +84,12 @@
   }
   
   .profile-dark {
+    color: #F2C438;
     border-radius: 20px;
-    width: 50%;
+    width: 40%;
     height: 450px;
     margin-top: 6%;
+    margin-bottom: 3%;
     padding: 20px;
     font-size: 20px;
     display: flex;
@@ -95,7 +97,7 @@
     align-items: center;
     text-align: center;
     background-color: #2e2e2e;
-    margin-left: 3%;
+    margin-left: 9%;
   }
 
   
@@ -120,4 +122,6 @@
     color: whitesmoke;
   }
 
-  
+  .name-title-dark {
+    color: #F2C438;
+  } */
