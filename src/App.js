@@ -5,7 +5,6 @@ import Provider from "./context/Provider";
 import Contato from "./pages/Contato";
 import Home from "./pages/Home";
 import Projetos from "./pages/Projetos";
-// import Login from "./pages/Login";
 
 function App() {
  return (

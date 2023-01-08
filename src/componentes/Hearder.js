@@ -61,7 +61,7 @@ function Header () {
         <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color="secondary">Projetos</Button>
         <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color="secondary">Contato</Button>
         </Box>
-      </Drawer>
+        </Drawer>
         </Box>
     )
 }
