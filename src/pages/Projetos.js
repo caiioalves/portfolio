@@ -7,6 +7,8 @@ import Portfolio from '../images/Portfolio.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import Context from "../context/Context";
 
 const projetos = [
     {
@@ -35,10 +37,15 @@ const projetos = [
     }
 ]
 
-const LinkRedirect = styled('a')({ color: 'black' });
-const LinkPage = styled(Link)({ color: 'black' })
+const LinkRedirect = styled('a')({});
+const LinkPage = styled(Link)({})
 
 function Projetos () {
+  
+    const {
+      colorCard, 
+      text
+    } = useContext(Context)
 
     return (
       <Box
@@ -48,7 +55,7 @@ function Projetos () {
       >
         <Header/>
         <Box mt={15}>
-          <Typography color="textPrimary" sx={{ bgcolor: '#E7D7C6', padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
+          <Typography color={text} sx={{ bgcolor: colorCard, padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
             Projetos
           </Typography>
         </Box>
@@ -64,27 +71,28 @@ function Projetos () {
         >
           {
             projetos.map((valor) => (
-              <Card key={valor.texto} sx={{ backgroundColor: '#E7D7C6', width: {xs: '100%', md: '40%'}}}>
+              <Card key={valor.texto} sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
                   sx={{ height: 120 }}
                   image={valor.imagem}
                 />
                 <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
-                  <Typography variant="h7" textAlign="center">
+                  <Typography color={text} variant="h7" textAlign="center">
                      {valor.texto}
                   </Typography>
                 </CardContent>
                 <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <LinkRedirect href={valor.linkGitHub} target="_blank">
+                  <LinkRedirect sx={{ color: 'buttons.main' }} href={valor.linkGitHub} target="_blank">
                     <GitHubIcon/>
                   </LinkRedirect>
                   {
                     valor.texto === 'Portfólio' ? (
-                      <LinkPage to={valor.linkSite}>
+                      <LinkPage sx={{ color: 'buttons.main' }}  to={valor.linkSite}>
                         <OpenInBrowserIcon/>
                       </LinkPage>
                     ) : (
-                      <LinkRedirect 
+                      <LinkRedirect
+                        sx={{ color: 'buttons.main' }} 
                         href={valor.linkSite} 
                         target="_blank"
                       >

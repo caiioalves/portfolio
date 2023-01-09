@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Divider, Drawer, IconButton, Typography } from "@mui/material";
+import { AppBar, Box, Button, Drawer, IconButton, Typography } from "@mui/material";
 import { useContext, useEffect } from "react";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
@@ -8,10 +8,12 @@ import { useNavigate } from "react-router-dom";
 
 
 function Header () {
-
     const {
       mode, setMode,
-      open, setOpen
+      open, setOpen,
+      text, setText,
+      colorH, setColorH,
+      setColorCard,
     } = useContext(Context)
 
     const navigate =  useNavigate();
@@ -19,11 +21,17 @@ function Header () {
   function handleClickMode() {
     const body = document.getElementsByTagName('body')[0];
         if(mode === 'dark') {
-          setMode('light')
-          body.style.backgroundColor = '#f0e7db'
+          setMode('light');
+          setText('textPrimary');
+          setColorH('primary.main');
+          setColorCard('#E7D7C6');
+          body.style.backgroundColor = '#f0e7db';
         } else {
-          setMode('dark')
-          body.style.backgroundColor = '#202023'
+          setMode('dark');
+          setText('textSecondary');
+          setColorH('secondary.main');
+          setColorCard('#404040');
+          body.style.backgroundColor = '#202023';
     }}
 
     function handleClickMenu() {
@@ -36,9 +44,18 @@ function Header () {
 
     return (
         <Box>
-        <AppBar sx={{ display: 'flex', padding: 1 , flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f0e7db' }}  className={`header-${mode}`}>
+        <AppBar
+          sx={{ 
+            display: 'flex', 
+            padding: 1 , 
+            flexDirection: 'row', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            backgroundColor: colorH 
+          }} 
+          >
         <Box>
-          <Typography  fontFamily="VT323, monospace" variant="h5" fontWeight="bold" color="#011F26"  className={`name-title-${mode}`}>{`< Caio Alexandre />`}</Typography>
+          <Typography  fontFamily="VT323, monospace" variant="h5" fontWeight="bold" color={text}  className={`name-title-${mode}`}>{`< Caio Alexandre />`}</Typography>
         </Box>
           <Box>
             {
@@ -59,12 +76,10 @@ function Header () {
           </Box>
         </AppBar>
         <Drawer anchor='right' open={open} onClose={() => {setOpen(false)}} >
-        <Box bgcolor="#f0e7db" height="100%" display="flex" flexDirection="column" alignItems="center" gap={5} padding={5} >
-          <Typography fontWeight="bold" variant="h7">Paginas</Typography>
-          <Divider sx={{ width: '100%' }} />
-          <Button onClick={() => { navigate('/') }} fullWidth  variant="outlined" color="secondary">Home</Button>
-          <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color="secondary">Projetos</Button>
-          <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color="secondary">Contato</Button>
+        <Box bgcolor={colorH} height="100%" display="flex" flexDirection="column" alignItems="center" gap={10} padding={5} >
+          <Button onClick={() => { navigate('/') }} fullWidth sx={{ mt: 10 }} variant="outlined" color='buttons'>Home</Button>
+          <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color='buttons'>Projetos</Button>
+          <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color='buttons'>Contato</Button>
         </Box>
         </Drawer>
         </Box>
