@@ -57,13 +57,22 @@ function Contato () {
       email: email,
       message: message,
       }, 'pIpYveEc25BHfHn98');
+      setAssunto('');
+      setNome('');
+      setEmail('');
+      setMessage('');
   };
 
     return (
       <Box height="100vh" display="flex" justifyContent="center" alignItems="center">
         <Header/>
         <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
-          <Typography color={text}>
+          <Typography
+            variant="h6" 
+            color={text}
+            sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3, mb: 3}}
+            fontWeight="bold"
+          >
             Formulário de contato
           </Typography>
             <CssTextField

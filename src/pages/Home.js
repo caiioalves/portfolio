@@ -99,12 +99,12 @@ function Home() {
                   target='_blank'
                   display="flex"
                   justifyContent="center"
-                  sx={{ width: { xs: '100%', md: '50%' } }}
+                  sx={{ width: { xs: '100%', md: '50%' }, textDecoration: 'none' }}
                 >
                   <Card sx={{ width: '70%' }}>
                     <CardMedia sx={{ height: 140 }} image={valor.imagem} />
                     <CardContent>
-                      <Typography color={text} variant="h7">
+                      <Typography variant="h7" fontWeight="bold" >
                         {valor.texto}
                       </Typography>
                     </CardContent>
