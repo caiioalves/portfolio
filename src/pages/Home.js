@@ -24,7 +24,7 @@ const certificados = [
 
 function Home() {
 
-  const { mode, text, colorCard, buttonsTitles} = useContext(Context);
+  const { mode, text, colorCard} = useContext(Context);
   const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks', 'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub', 'Terminal Linux' ]
     
   return (

@@ -10,6 +10,7 @@ export const Theme = createTheme({
         },
         buttons: {
             main: '#BF3604',
+            contrastText: '#f0e7db'
         },
         text: {
             primary: '#011F26',
