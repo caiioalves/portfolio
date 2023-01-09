@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Drawer, IconButton, Typography } from "@mui/material";
+import { AppBar, Box, Button, Divider, Drawer, IconButton, Typography } from "@mui/material";
 import { useContext, useEffect } from "react";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
@@ -60,8 +60,9 @@ function Header () {
         </AppBar>
         <Drawer anchor='right' open={open} onClose={() => {setOpen(false)}} >
         <Box bgcolor="#f0e7db" height="100%" display="flex" flexDirection="column" alignItems="center" gap={5} padding={5} >
-          <Typography variant="h7">Paginas</Typography>
-          <Button onClick={() => { navigate('/') }} fullWidth  sx={{ mt: 5}} variant="outlined" color="secondary">Home</Button>
+          <Typography fontWeight="bold" variant="h7">Paginas</Typography>
+          <Divider sx={{ width: '100%' }} />
+          <Button onClick={() => { navigate('/') }} fullWidth  variant="outlined" color="secondary">Home</Button>
           <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color="secondary">Projetos</Button>
           <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color="secondary">Contato</Button>
         </Box>

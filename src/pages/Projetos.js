@@ -1,10 +1,12 @@
-import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Link, Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, CardMedia, styled, Typography } from "@mui/material";
 import Header from "../componentes/Hearder";
 import Wallet from '../images/Wallet.jpg';
 import Trivia from '../images/Trivia.jpg';
 import Receitas from '../images/Receitas.jpg';
+import Portfolio from '../images/Portfolio.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
+import { Link } from "react-router-dom";
 
 const projetos = [
     {
@@ -24,17 +26,45 @@ const projetos = [
       texto: 'App de Receitas',
       linkGitHub: 'https://github.com/caiioalves/app-receitas',
       linkSite: 'https://caio-receitas.vercel.app/'
+    },
+    {
+      imagem: Portfolio,
+      texto: 'Portfólio',
+      linkGitHub: 'https://github.com/caiioalves/portfolio',
+      linkSite: '/'  
     }
 ]
 
+const LinkRedirect = styled('a')({ color: 'black' });
+const LinkPage = styled(Link)({ color: 'black' })
+
 function Projetos () {
+
     return (
-      <Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
         <Header/>
-        <Box display="flex" justifyContent="center" alignItems="center" sx={{ flexDirection: { xs: 'column', md: 'row' } }} gap={4} mt={10}>
+        <Box mt={15}>
+          <Typography color="textPrimary" sx={{ bgcolor: '#E7D7C6', padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
+            Projetos
+          </Typography>
+        </Box>
+        <Box 
+          display="flex"
+          justifyContent="center"
+          alignItems="center" 
+          flexWrap="wrap"
+          sx={{ flexDirection: { xs: 'column', md: 'row' }, width: '50%' }} 
+          gap={4} 
+          mt={5}
+          mb={5}
+        >
           {
             projetos.map((valor) => (
-              <Card sx={{ backgroundColor: '#E7D7C6', width: {xs: '50%', md: '20%'}}}>
+              <Card key={valor.texto} sx={{ backgroundColor: '#E7D7C6', width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
                   sx={{ height: 120 }}
                   image={valor.imagem}
@@ -45,16 +75,23 @@ function Projetos () {
                   </Typography>
                 </CardContent>
                 <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  {/* <IconButton> */}
-                    <Link href={valor.linkGitHub} target="_blank">
-                      <GitHubIcon/>
-                    </Link>
-                  {/* </IconButton> */}
-                  {/* <IconButton> */}
-                    <Link href={valor.linkSite} target="_blank">
-                    <OpenInBrowserIcon/>
-                    </Link>
-                  {/* </IconButton> */}
+                  <LinkRedirect href={valor.linkGitHub} target="_blank">
+                    <GitHubIcon/>
+                  </LinkRedirect>
+                  {
+                    valor.texto === 'Portfólio' ? (
+                      <LinkPage to={valor.linkSite}>
+                        <OpenInBrowserIcon/>
+                      </LinkPage>
+                    ) : (
+                      <LinkRedirect 
+                        href={valor.linkSite} 
+                        target="_blank"
+                      >
+                        <OpenInBrowserIcon/>
+                      </LinkRedirect>
+                    ) 
+                  }
                 </CardActions>
               </Card>
               ))
