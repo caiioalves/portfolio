@@ -3,16 +3,16 @@ import '../App.css';
 import '../styles/dark.css'
 import '../styles/light.css'
 import { useContext } from 'react';
-import { Avatar, Box, Paper, Typography } from '@mui/material';
+import { Avatar, Box, List, ListItem, Paper, Typography } from '@mui/material';
 import Context from '../context/Context';
 import Header from '../componentes/Hearder';
 
 function Home() {
 
-  const {
-    mode
-  } = useContext(Context)
+  const { mode } = useContext(Context);
+  const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks', 'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub', 'Terminal Linux' ]
     
+
   return (
     <Box
       height="100vh"
@@ -26,6 +26,18 @@ function Home() {
         <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: '#E7D7C6', display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2 }} className={`profile-${mode}`}>
           <Typography color="primary" sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Sobre mim</Typography>
           <Typography textAlign="justify" variant='h7'  color="#011F26" >Eu me chamo Caio, tenho 19 anos e sou natural de Belo Horizonte/MG. Desde pequeno sempre gostei muito de criar e inventar coisas, creio que por isso eu goste tanto da area de programação, uma vez que ela me possibilita expressar minha imaginação e vontade de criação atraves dos codigos. Tenho como vontade e objetivo evoluir cada vez mais como um programador, criando e aprimorando codigos que possam impactar a vida  de pessoas da melhor forma possivel. Estou trilhando esse caminho!  </Typography>
+        </Paper>
+        <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: '#E7D7C6', display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2, mb: 5 }} className={`profile-${mode}`}>
+          <Typography color="primary" sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Habilidades</Typography>
+          {/* <Typography textAlign="justify" variant='h7'  color="#011F26" >
+          </Typography> */}
+          <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', }}>
+            {
+              habilidades.map((valor) => (
+                <ListItem sx={{ display: 'flex', justifyContent: 'center' }} key={valor}>{valor}</ListItem>
+              ))  
+            }
+          </List>
         </Paper>
       </Box>
     </Box>
