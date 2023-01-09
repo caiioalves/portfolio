@@ -8,15 +8,15 @@ import Projetos from "./pages/Projetos";
 
 function App() {
  return (
-  <ThemeProvider theme={Theme}>
-    <Provider>
+   <Provider>
+     <ThemeProvider theme={Theme}>
       <Routes>
         <Route path="/" element={ <Home/> } />
         <Route path="/contato" element={ <Contato/> } />
         <Route path="/projetos" element={ <Projetos/> } />
       </Routes>
-    </Provider>
-  </ThemeProvider>
+     </ThemeProvider>
+   </Provider>
  ) 
 }
 

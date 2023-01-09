@@ -17,10 +17,13 @@ function Header () {
     const navigate =  useNavigate();
     
   function handleClickMode() {
+    const body = document.getElementsByTagName('body')[0];
         if(mode === 'dark') {
           setMode('light')
+          body.style.backgroundColor = '#f0e7db'
         } else {
           setMode('dark')
+          body.style.backgroundColor = '#202023'
     }}
 
     function handleClickMenu() {
@@ -33,7 +36,7 @@ function Header () {
 
     return (
         <Box>
-        <AppBar sx={{ display: 'flex', padding: 1 , flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}  className={`header-${mode}`}>
+        <AppBar sx={{ display: 'flex', padding: 1 , flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f0e7db' }}  className={`header-${mode}`}>
         <Box>
           <Typography  fontFamily="VT323, monospace" variant="h5" fontWeight="bold" color="#011F26"  className={`name-title-${mode}`}>{`< Caio Alexandre />`}</Typography>
         </Box>
@@ -57,9 +60,10 @@ function Header () {
         </AppBar>
         <Drawer anchor='right' open={open} onClose={() => {setOpen(false)}} >
         <Box bgcolor="#f0e7db" height="100%" display="flex" flexDirection="column" alignItems="center" gap={5} padding={5} >
-        <Button onClick={() => { navigate('/') }} fullWidth  sx={{ mt: 5}} variant="outlined" color="secondary">Home</Button>
-        <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color="secondary">Projetos</Button>
-        <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color="secondary">Contato</Button>
+          <Typography variant="h7">Paginas</Typography>
+          <Button onClick={() => { navigate('/') }} fullWidth  sx={{ mt: 5}} variant="outlined" color="secondary">Home</Button>
+          <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color="secondary">Projetos</Button>
+          <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color="secondary">Contato</Button>
         </Box>
         </Drawer>
         </Box>
