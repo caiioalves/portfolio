@@ -10,33 +10,6 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../context/Context";
 
-const projetos = [
-    {
-      imagem: Wallet,
-      texto: 'Wallet',
-      linkGitHub: 'https://github.com/caiioalves/wallet',
-      linkSite: 'https://caio-wallet.netlify.app/'
-    },
-    {
-      imagem: Trivia,
-      texto: 'Jodo de Trivia',
-      linkGitHub: 'https://github.com/caiioalves/trivia-game',
-      linkSite: 'https://caio-trivia.vercel.app/'
-    },
-    {
-      imagem: Receitas,
-      texto: 'App de Receitas',
-      linkGitHub: 'https://github.com/caiioalves/app-receitas',
-      linkSite: 'https://caio-receitas.vercel.app/'
-    },
-    {
-      imagem: Portfolio,
-      texto: 'Portfólio',
-      linkGitHub: 'https://github.com/caiioalves/portfolio',
-      linkSite: '/'  
-    }
-]
-
 const LinkRedirect = styled('a')({});
 const LinkPage = styled(Link)({})
 
@@ -47,6 +20,33 @@ function Projetos () {
       text
     } = useContext(Context)
 
+    const projetos = [
+      {
+        imagem: Wallet,
+        texto: 'Wallet',
+        linkGitHub: 'https://github.com/caiioalves/wallet',
+        linkSite: 'https://caio-wallet.netlify.app/'
+      },
+      {
+        imagem: Trivia,
+        texto: 'Jodo de Trivia',
+        linkGitHub: 'https://github.com/caiioalves/trivia-game',
+        linkSite: 'https://caio-trivia.vercel.app/'
+      },
+      {
+        imagem: Receitas,
+        texto: 'App de Receitas',
+        linkGitHub: 'https://github.com/caiioalves/app-receitas',
+        linkSite: 'https://caio-receitas.vercel.app/'
+      },
+      {
+        imagem: Portfolio,
+        texto: 'Portfólio',
+        linkGitHub: 'https://github.com/caiioalves/portfolio',
+        linkSite: '/'  
+      }
+  ]
+
     return (
       <Box
         display="flex"
@@ -54,7 +54,7 @@ function Projetos () {
         alignItems="center"
       >
         <Header/>
-        <Box>
+        <Box sx={{ mt: {xs: -5, md: -1} }}>
           <Typography color={text} sx={{ bgcolor: colorCard, padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
             Projetos
           </Typography>

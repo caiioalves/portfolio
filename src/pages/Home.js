@@ -34,7 +34,7 @@ function Home() {
       height="100vh"
     >
       <Header/>
-      <Box display="flex" alignItems="center" gap={6} flexDirection="column">
+      <Box sx={{ mt: {xs: -5, md: 0} }} display="flex" alignItems="center" gap={6} flexDirection="column">
         {/* <Box mt={8} height="40vh"> 
           <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
         </Box> */}

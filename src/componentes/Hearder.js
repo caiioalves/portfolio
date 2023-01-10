@@ -76,7 +76,7 @@ function Header () {
           </Box>
         </AppBar>
         <Drawer anchor='right' open={open} onClose={() => {setOpen(false)}} >
-        <Box bgcolor={colorH} height="100%" display="flex" flexDirection="column" alignItems="center" gap={10} padding={5} >
+        <Box bgcolor={colorH} height="100%" display="flex" flexDirection="column" gap={3} mt={-10} padding={5} >
           <Button onClick={() => { navigate('/') }} fullWidth sx={{ mt: 10 }} variant="outlined" color='buttons'>Home</Button>
           <Button onClick={() => { navigate('/projetos') }} fullWidth variant="outlined" color='buttons'>Projetos</Button>
           <Button onClick={() => { navigate('/contato') }} fullWidth  variant="outlined" color='buttons'>Contato</Button>
