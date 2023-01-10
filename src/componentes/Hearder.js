@@ -6,7 +6,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Context from "../context/Context";
 import { useNavigate } from "react-router-dom";
 
-
 function Header () {
     const {
       mode, setMode,
@@ -18,29 +17,30 @@ function Header () {
 
     const navigate =  useNavigate();
     
-  function handleClickMode() {
-    const body = document.getElementsByTagName('body')[0];
-        if(mode === 'dark') {
-          setMode('light');
-          setText('textPrimary');
-          setColorH('primary.main');
-          setColorCard('#E7D7C6');
-          body.style.backgroundColor = '#f0e7db';
-        } else {
-          setMode('dark');
-          setText('textSecondary');
-          setColorH('secondary.main');
-          setColorCard('#404040');
-          body.style.backgroundColor = '#202023';
-    }}
-
+    
     function handleClickMenu() {
-        setOpen(true)
+      setOpen(true)
     };
-
+    
     useEffect(() => {
       setOpen(false)
     }, [setOpen])
+    
+    function handleClickMode() {
+      const body = document.getElementsByTagName('body')[0];
+          if(mode === 'dark') {
+            setMode('light');
+            setText('textPrimary');
+            setColorH('primary.main');
+            setColorCard('#E7D7C6');
+            body.style.backgroundColor = '#f0e7db';
+          } else {
+            setMode('dark');
+            setText('textSecondary');
+            setColorH('secondary.main');
+            setColorCard('#404040');
+            body.style.backgroundColor = '#202023';
+      }}
 
     return (
         <Box>

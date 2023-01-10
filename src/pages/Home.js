@@ -8,6 +8,8 @@ import { useContext } from 'react';
 import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Paper, Typography } from '@mui/material';
 import Context from '../context/Context';
 import Header from '../componentes/Hearder';
+// import Modelo3D from '../componentes/Modelo3D';
+// import Spline from '@splinetool/react-spline';
 
 const certificados = [
   {
@@ -32,8 +34,12 @@ function Home() {
       height="100vh"
     >
       <Header/>
-      <Box display="flex" alignItems="center" gap={10} flexDirection="column">
-        <Box gap={2} display="flex" flexDirection="column" alignItems="center" mt={15} className={`profile-${mode}`}>
+      <Box display="flex" alignItems="center" gap={6} flexDirection="column">
+        {/* <Box mt={8} height="40vh"> 
+          <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
+        </Box> */}
+        {/* <Modelo3D/> */}
+        <Box gap={2} display="flex" flexDirection="column" alignItems="center" className={`profile-${mode}`}>
           <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
           <Typography color={text} textAlign="center" sx={{width: {xs: '75%', md: '90%'}}} fontWeight="bold" bgcolor={colorCard} padding={0.5} paddingRight={3} paddingLeft={3} borderRadius={2} variant="h7">Olá, eu sou desenvolvedor web front-end!</Typography>
         </Box>
