@@ -64,7 +64,7 @@ function Contato () {
   };
 
     return (
-      <Box height="100vh" display="flex" justifyContent="center" alignItems="center">
+      <Box height="100vh" display="flex" justifyContent="center" alignItems="center" sx={{ mt: {xs: -30, md: -10} }}>
         <Header/>
         <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
           <Typography

@@ -53,8 +53,8 @@ function Home() {
           </Typography> */}
           <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', }}>
             {
-              habilidades.map((valor) => (
-                <ListItem sx={{ display: 'flex', justifyContent: 'center' }} key={valor}>
+              habilidades.map((valor, i) => (
+                <ListItem sx={{ display: 'flex', justifyContent: 'center' }} key={i}>
                   <Typography variant='h7' color={text}>
                     {valor}
                   </Typography>

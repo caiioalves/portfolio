@@ -54,7 +54,7 @@ function Projetos () {
         alignItems="center"
       >
         <Header/>
-        <Box mt={15}>
+        <Box>
           <Typography color={text} sx={{ bgcolor: colorCard, padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
             Projetos
           </Typography>
