@@ -6,16 +6,15 @@ function Provider ({children}) {
     const [ open, setOpen ] = useState(false);
     const [ text, setText ] = useState('textPrimary');
     const [colorH, setColorH ] = useState('primary.main');
-    const [ colorCard, setColorCard ] = useState('#E7D7C6');
-    // const [ buttonsTitles, setButtonsTitles ] =  useState('btLight')
-
+    const [colorCard, setColorCard] = useState('#E7D7C6');
+    const [iconButton, setIconButton] = useState('action');
     const state = {
       mode, setMode,
       open, setOpen,
       text, setText,
       colorH, setColorH,
       colorCard, setColorCard,
-    //   buttonsTitles, setButtonsTitles
+      iconButton, setIconButton
     }
 
     return(

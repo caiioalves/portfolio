@@ -55,7 +55,18 @@ function Projetos () {
       >
         <Header/>
         <Box sx={{ mt: {xs: -5, md: -1} }}>
-          <Typography color={text} sx={{ bgcolor: colorCard, padding: 0.5 ,paddingLeft: 3, paddingRight: 3, borderRadius: 2 }} fontWeight="bold" variant="h7">
+          <Typography
+            color={text}
+            sx={{
+              bgcolor: colorCard, 
+              padding: 0.5,
+              paddingLeft: 3, 
+              paddingRight: 3, 
+              borderRadius: 2 
+            }} 
+            fontWeight="bold" 
+            variant="h7"
+          >
             Projetos
           </Typography>
         </Box>
