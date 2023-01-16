@@ -27,7 +27,9 @@ const certificados = [
 function Home() {
 
   const { mode, text, colorCard} = useContext(Context);
-  const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks', 'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub', 'Terminal Linux' ]
+  const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks',
+  'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub',
+  'Terminal Linux' ]
     
   return (
     <Box
@@ -45,7 +47,14 @@ function Home() {
         </Box>
         <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: colorCard, display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2 }} className={`profile-${mode}`}>
           <Typography color={text} sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Sobre mim</Typography>
-          <Typography textAlign="justify" variant='h7'  color={text} >Eu me chamo Caio, tenho 19 anos e sou natural de Belo Horizonte/MG. Desde pequeno sempre gostei muito de criar e inventar coisas, creio que por isso eu goste tanto da area de programação, uma vez que ela me possibilita expressar minha imaginação e vontade de criação atraves dos codigos. Tenho como vontade e objetivo evoluir cada vez mais como um programador, criando e aprimorando codigos que possam impactar a vida  de pessoas da melhor forma possivel. Estou trilhando esse caminho!  </Typography>
+          <Typography textAlign="justify" variant='h7'  color={text} >
+          Olá, meu nome é Caio Alexandre, tenho  20 anos de idade, e sou natural de Belo Horizonte/MG. Na minha infância,
+          sempre apresentei interesse em criar, inventar e reinventar diferentes objetos. Esse meu entusiasmo se 
+          desenvolveu, e hoje aplico as minhas habilidades no âmbito virtual, especificamente na área da programação. 
+          Já que por meio dela, consigo expressar minha imaginação e vontade na elaboração de diversos códigos. O meu 
+          principal objetivo é evoluir cada vez mais como programador, criando e aprimorando códigos que possam impactar 
+          a vida de pessoas da melhor forma possível. Sendo assim, estou trilhando esse caminho!
+          </Typography>
         </Paper>
         <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: colorCard, display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2}} className={`profile-${mode}`}>
           <Typography color={text} sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Habilidades</Typography>

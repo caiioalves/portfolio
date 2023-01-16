@@ -48,7 +48,7 @@ function Header () {
           if(mode === 'dark') {
             setTransiçaoLight(!transiçaoLight);
             setTransiçaoDark(!transiçaoDark);
-            setTimeout(() => {setMode('light');}, 1000);
+            setTimeout(() => {setMode('light');}, 500);
             setText('textPrimary');
             setColorH('primary.main');
             setColorCard('#E7D7C6');
@@ -58,7 +58,7 @@ function Header () {
             setTransiçaoLight(!transiçaoLight);
             setTransiçaoDark(!transiçaoDark);
             // setMode('dark');
-            setTimeout(() => {setMode('dark');}, 1000);
+            setTimeout(() => {setMode('dark');}, 500);
             setText('textSecondary');
             setColorH('secondary.main');
             setColorCard('#404040');

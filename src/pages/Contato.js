@@ -64,7 +64,7 @@ function Contato () {
   };
 
     return (
-      <Box height="100vh" display="flex" justifyContent="center" alignItems="center" sx={{ mt: {xs: -30, md: -10} }}>
+      <Box height="100vh" display="flex" justifyContent="center" alignItems="center" sx={{ mt: {xs: -15, md: -10,} }}>
         <Header/>
         <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
           <Typography
@@ -73,7 +73,7 @@ function Contato () {
             sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3, mb: 3}}
             fontWeight="bold"
           >
-            Formulário de contato
+            Entre em contato
           </Typography>
             <CssTextField
               sx={{ width: {xs: '80%', md: '30%'}}}
