@@ -1,16 +1,10 @@
 import { Box, CircularProgress } from "@mui/material";
 import Spline from "@splinetool/react-spline";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Modelo3D () {
 
   const [carregando, setCarregando] = useState(true);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setCarregando(false);
-  //   }, 3000)
-  // })
 
   const onLoad = () => {
     setCarregando(false);

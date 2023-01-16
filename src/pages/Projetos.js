@@ -1,4 +1,4 @@
-import { Box, Card, CardActions, CardContent, CardMedia, styled, Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, CardMedia, Slide, styled, Typography } from "@mui/material";
 import Wallet from '../images/Wallet.jpg';
 import Trivia from '../images/Trivia.jpg';
 import Receitas from '../images/Receitas.jpg';
@@ -18,7 +18,8 @@ function Projetos () {
       colorCard, 
       text,
       buttonMode, 
-      setTransiçao
+      setTransiçao,
+      transiçao
     } = useContext(Context)
 
     const projetos = [
@@ -53,6 +54,7 @@ function Projetos () {
   })
 
     return (
+      <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
       <Box
         display="flex"
         flexDirection="column"
@@ -84,11 +86,11 @@ function Projetos () {
           mt={5}
           mb={5}
         >
-          {/* {
+          {
             projetos.map((valor, i) => (
               <Card key={i} sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
-                  sx={{ height: 120 }}
+                  sx={{ height: 60 }}
                   image={valor.imagem}
                 />
                 <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
@@ -117,94 +119,10 @@ function Projetos () {
                 </CardActions>
               </Card>
               ))
-            } */}
-            <Card sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
-                <CardMedia
-                  sx={{ height: 120 }}
-                  image={Wallet}
-                />
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
-                  <Typography color={text} variant="h7" textAlign="center">
-                  Wallet
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <LinkRedirect href="https://github.com/caiioalves/wallet" target="_blank">
-                    <GitHubIcon color={buttonMode}/>
-                  </LinkRedirect>
-                      <LinkRedirect
-                        href="https://caio-wallet.netlify.app/" 
-                        target="_blank"
-                      >
-                        <OpenInBrowserIcon color={buttonMode}/>
-                      </LinkRedirect>
-                </CardActions>
-              </Card>
-              <Card sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
-                <CardMedia
-                  sx={{ height: 120 }}
-                  image={Trivia}
-                />
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
-                  <Typography color={text} variant="h7" textAlign="center">
-                    Jogo de Trivia
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <LinkRedirect href="https://github.com/caiioalves/trivia-game" target="_blank">
-                    <GitHubIcon color={buttonMode}/>
-                  </LinkRedirect>
-                      <LinkRedirect
-                        href="https://caio-trivia.vercel.app/" 
-                        target="_blank"
-                      >
-                        <OpenInBrowserIcon color={buttonMode}/>
-                      </LinkRedirect>
-                </CardActions>
-              </Card>
-              <Card sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
-                <CardMedia
-                  sx={{ height: 120 }}
-                  image={Receitas}
-                />
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
-                  <Typography color={text} variant="h7" textAlign="center">
-                    App de Receitas
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <LinkRedirect href="https://github.com/caiioalves/app-receitas" target="_blank">
-                    <GitHubIcon color={buttonMode}/>
-                  </LinkRedirect>
-                      <LinkRedirect
-                        href="https://caio-receitas.vercel.app/" 
-                        target="_blank"
-                      >
-                        <OpenInBrowserIcon color={buttonMode}/>
-                      </LinkRedirect>
-                </CardActions>
-              </Card>
-              <Card sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
-                <CardMedia
-                  sx={{ height: 120 }}
-                  image={Receitas}
-                />
-                <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
-                  <Typography color={text} variant="h7" textAlign="center">
-                    Portifólio
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{padding: 1, display: 'flex', justifyContent: 'center', gap: 2}}>
-                  <LinkRedirect href="https://github.com/caiioalves/portfolio" target="_blank">
-                    <GitHubIcon color={buttonMode}/>
-                  </LinkRedirect>
-                      <LinkPage to="/">
-                        <OpenInBrowserIcon color={buttonMode}/>
-                      </LinkPage>
-                </CardActions>
-              </Card>
+            }
         </Box>
       </Box>
+      </Slide>
     )
 }
 
