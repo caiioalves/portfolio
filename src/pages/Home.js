@@ -2,12 +2,9 @@ import imgProfile  from '../images/caio.jpg';
 import certificadoFrontEnd  from '../images/certificadoFrontEnd.PNG';
 import certificadoFundamentos  from '../images/certificadoFundamentos.PNG';
 import '../App.css';
-import '../styles/dark.css'
-import '../styles/light.css'
-import { useContext } from 'react';
-import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Paper, Typography } from '@mui/material';
+import { useContext, useEffect } from 'react';
+import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Paper, Slide, Typography } from '@mui/material';
 import Context from '../context/Context';
-import Header from '../componentes/Hearder';
 // import Modelo3D from '../componentes/Modelo3D';
 // import Spline from '@splinetool/react-spline';
 
@@ -26,16 +23,21 @@ const certificados = [
 
 function Home() {
 
-  const { mode, text, colorCard} = useContext(Context);
+  const { mode, text, colorCard, transiçao ,setTransiçao} = useContext(Context);
+
   const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks',
   'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub',
-  'Terminal Linux' ]
+  'Terminal Linux' ];
+
+  useEffect(() => {
+    setTransiçao(true)
+  })
     
   return (
     <Box
       height="100vh"
     >
-      <Header/>
+      <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
       <Box sx={{ mt: {xs: -5, md: 0} }} display="flex" alignItems="center" gap={6} flexDirection="column">
         {/* <Box mt={8} height="40vh"> 
           <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
@@ -131,6 +133,7 @@ function Home() {
           </Box>
         </Paper>
       </Box>
+      </Slide>
     </Box>
   );
 }

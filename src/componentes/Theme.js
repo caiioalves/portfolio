@@ -8,9 +8,14 @@ export const Theme = createTheme({
         secondary: {
             main: '#202023',
         },
-        buttons: {
+
+        buttonsLight: {
             main: '#BF3604',
-            contrastText: '#f0e7db'
+            contrastText: '#FFFFFF'
+        },
+
+        buttonsDark: {
+            main: '#04B2D9',
         },
         text: {
             primary: '#011F26',

@@ -1,19 +1,18 @@
-import { Box, Button, styled, TextField, Typography } from "@mui/material";
+import { Box, Button, Slide, styled, TextField, Typography } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import Header from "../componentes/Hearder";
 import Context from "../context/Context";
 import emailjs from '@emailjs/browser';
 
 const CssTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: "#BF3604",
+      borderColor: "#595959",
     },
     '&:hover fieldset': {
-      borderColor: "#BF3604",
+      borderColor: "#595959",
     },
     '&.Mui-focused fieldset': {
-      borderColor: "#BF3604",
+      borderColor: "#595959",
     },
   }
 });
@@ -22,7 +21,8 @@ const CssTextField = styled(TextField)({
 function Contato () {
   
   const {
-    mode, text
+    text, buttonMode,
+    transiçao, setTransiçao
   } = useContext(Context);
   
   const [colorLabel, setColorLabel] = useState('black');
@@ -34,21 +34,25 @@ function Contato () {
   const [colorInput ,setColorInput] = useState('primary');
   
   useEffect(() => {
-    // console.log('teste');
-    if(mode === 'dark') {
+    if(text === 'textSecondary') {
       setColorLabel('white');
       setColorInput('primary');
     } else {
       setColorLabel('black');
       setColorInput('secondary');
     }
-  }, [mode])
+  }, [text]);
+
+  useEffect(() => {
+    setTransiçao(true)
+  })
+
 
   useEffect(() => {
     if(assunto.length > 0 && nome.length > 0 && email.length > 0 && message.length > 0 ) {
       setDisabled(false)
     } else { setDisabled(true) }
-  }, [assunto, nome, email, message])
+  }, [assunto, nome, email, message]);
 
   const handleClick = () => {
     emailjs.send("gmailMessage","template_amt1hhh",{
@@ -65,7 +69,7 @@ function Contato () {
 
     return (
       <Box height="100vh" display="flex" justifyContent="center" alignItems="center" sx={{ mt: {xs: -15, md: -10,} }}>
-        <Header/>
+        <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
         <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
           <Typography
             variant="h6" 
@@ -114,26 +118,22 @@ function Contato () {
               onChange={(e) => {setMessage(e.target.value)}}
               label="Message"
               color={colorInput}
-              // color="warning"
               multiline
               rows={6}
             />
             <Button
               sx={{ fontWeight: 'bold' }}
               disabled={disabled}
-              color="buttons"
+              color={buttonMode}
               variant="contained"
               onClick={handleClick}
             >
               Enviar
             </Button>
-             {/* <FormHelperText sx={{color: 'red'}}>
-               {
-                assunto.length < 5 ? 'O input deve ter mais de 5 caracteres' : undefined
-               }
-             </FormHelperText> */}
         </Box>
+        </Slide>
       </Box>
+
     )
 }
 
