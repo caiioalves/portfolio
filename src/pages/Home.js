@@ -3,7 +3,7 @@ import certificadoFrontEnd  from '../images/certificadoFrontEnd.PNG';
 import certificadoFundamentos  from '../images/certificadoFundamentos.PNG';
 import '../App.css';
 import { useContext, useEffect } from 'react';
-import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Paper, Slide, Typography } from '@mui/material';
+import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Slide, Typography } from '@mui/material';
 import Context from '../context/Context';
 // import Modelo3D from '../componentes/Modelo3D';
 // import Spline from '@splinetool/react-spline';
@@ -23,7 +23,7 @@ const certificados = [
 
 function Home() {
 
-  const { mode, text, colorCard, transiçao ,setTransiçao} = useContext(Context);
+  const { text, colorCard, transiçao ,setTransiçao} = useContext(Context);
 
   const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks',
   'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub',
@@ -43,12 +43,41 @@ function Home() {
           <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
         </Box> */}
         {/* <Modelo3D/> */}
-        <Box gap={2} display="flex" flexDirection="column" alignItems="center" className={`profile-${mode}`}>
+        <Box sx={{padding: 3, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: 3, gap: 2 }}>
           <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
-          <Typography color={text} textAlign="center" sx={{width: {xs: '75%', md: '90%'}}} fontWeight="bold" bgcolor={colorCard} padding={0.5} paddingRight={3} paddingLeft={3} borderRadius={2} variant="h7">Olá, eu sou desenvolvedor web front-end!</Typography>
+          <Typography 
+            color={text} 
+            textAlign="center" 
+            sx={{width: {xs: '75%', md: '90%'}}} 
+            fontWeight="bold"  
+            padding={0.5} 
+            paddingRight={3} 
+            paddingLeft={3} 
+            borderRadius={2} 
+            variant="h7"
+            bgcolor={colorCard}
+          >
+            Olá, eu sou desenvolvedor web front-end!
+          </Typography>
         </Box>
-        <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: colorCard, display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2 }} className={`profile-${mode}`}>
-          <Typography color={text} sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Sobre mim</Typography>
+        <Box 
+          sx={{ width: {xs: '75%', md: '50%'}, 
+          padding: 3, 
+          display:'flex', 
+          flexDirection: 'column', 
+          borderRadius: 3, 
+          gap: 2 }}
+        >
+          <Typography 
+            color={text} 
+            sx={{ textDecoration: "underline", 
+            textUnderlineOffset: 5, textDecorationThickness: 3}} 
+            fontWeight="bold" 
+            variant="h6" 
+            alignSelf="flex-start"
+          >
+            Sobre mim
+          </Typography>
           <Typography textAlign="justify" variant='h7'  color={text} >
           Olá, meu nome é Caio Alexandre, tenho  20 anos de idade, e sou natural de Belo Horizonte/MG. Na minha infância,
           sempre apresentei interesse em criar, inventar e reinventar diferentes objetos. Esse meu entusiasmo se 
@@ -57,29 +86,50 @@ function Home() {
           principal objetivo é evoluir cada vez mais como programador, criando e aprimorando códigos que possam impactar 
           a vida de pessoas da melhor forma possível. Sendo assim, estou trilhando esse caminho!
           </Typography>
-        </Paper>
-        <Paper sx={{ width: {xs: '75%', md: '50%'}, padding: 3, bgcolor: colorCard, display:'flex', flexDirection: 'column', borderRadius: 3, gap: 2}} className={`profile-${mode}`}>
-          <Typography color={text} sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}} fontWeight="bold" variant="h6" alignSelf="center">Habilidades</Typography>
+        </Box>
+        <Box 
+          sx={{ 
+            width: {xs: '75%', md: '50%'}, 
+            padding: 3, 
+            display:'flex', 
+            flexDirection: 'column', 
+            borderRadius: 3, 
+            gap: 2
+          }} 
+        >
+          <Typography 
+            color={text} 
+            sx={{ 
+              textDecoration: "underline", 
+              textUnderlineOffset: 5, 
+              textDecorationThickness: 3
+            }} 
+            fontWeight="bold" 
+            variant="h6" 
+            alignSelf="flex-start"
+          >
+            Habilidades
+          </Typography>
           {/* <Typography textAlign="justify" variant='h7'  color="#011F26" >
           </Typography> */}
-          <List sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', }}>
+          <List sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, flexWrap: 'wrap', justifyContent: 'flex-start'}}>
             {
               habilidades.map((valor, i) => (
-                <ListItem sx={{ display: 'flex', justifyContent: 'center' }} key={i}>
+                <ListItem sx={{ display: 'flex', justifyContent: 'flex-start', width: {xs: '100%', md: '50%'}, }} key={i}>
                   <Typography variant='h7' color={text}>
-                    {valor}
+                     {`- ${valor}`}
                   </Typography>
                 </ListItem>
               ))  
             }
           </List>
-        </Paper>
-        <Paper
+        </Box>
+        <Box
           sx={{
             width: {xs: '75%', md: '50%'}, 
             padding: 3, 
-            bgcolor: colorCard, 
-            // display:'flex', 
+            display:'flex', 
+            justifyContent: 'flex-start',
             // flexDirection: 'column', 
             borderRadius: 3, 
             gap: 2, 
@@ -89,14 +139,15 @@ function Home() {
           <Box
             display="flex"
             flexDirection="column"
-
+            alignItems="flex-start"
+            width="100%"
           >
             <Typography
               color={text}
               sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}}
               fontWeight="bold"
               variant="h6"
-              alignSelf="center"
+              alignSelf="flex-start"
             >
               Formação
             </Typography>
@@ -108,14 +159,24 @@ function Home() {
             >
               Curso de Desenvolvimento Web - Trybe
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: {xs: 'column', md: 'row'} }} gap={5} mt={5}>
+            <Box 
+              sx={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                alignItems: "flex-start", 
+                flexDirection: {xs: 'column', md: 'row'} }} 
+              gap={5} 
+              mt={5}
+              width="100%"
+            >
             {
               certificados.map((valor, i) => (
                 <Link
                   href={ valor.link }
                   target='_blank'
                   display="flex"
-                  justifyContent="center"
+                  justifyContent="flex-start"
+                  // alignItems="flex-start"
                   sx={{ width: { xs: '100%', md: '50%' }, textDecoration: 'none' }}
                 >
                   <Card sx={{ width: '70%' }}>
@@ -131,7 +192,7 @@ function Home() {
             }
             </Box>
           </Box>
-        </Paper>
+        </Box>
       </Box>
       </Slide>
     </Box>
