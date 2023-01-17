@@ -127,9 +127,8 @@ function Header () {
               />
             </IconButton>
           </Box>
-        </AppBar>
         <Menu 
-          sx={{ mt: -2, }}
+          sx={{ top: -2, position: 'absolute' }}
           open={open} 
           onClose={() => {setOpen(false)}}
           anchorOrigin={{
@@ -177,6 +176,7 @@ function Header () {
             </Button>
           </MenuItem>
         </Menu>
+        </AppBar>
         </Box>
     )
 }

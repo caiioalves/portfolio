@@ -90,7 +90,7 @@ function Projetos () {
             projetos.map((valor, i) => (
               <Card key={i} sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
-                  sx={{ height: 60 }}
+                  sx={{ height: 120 }}
                   image={valor.imagem}
                 />
                 <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
