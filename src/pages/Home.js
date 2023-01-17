@@ -39,10 +39,6 @@ function Home() {
     >
       <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
       <Box sx={{ mt: {xs: -5, md: 0} }} display="flex" alignItems="center" gap={6} flexDirection="column">
-        {/* <Box mt={8} height="40vh"> 
-          <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
-        </Box> */}
-        {/* <Modelo3D/> */}
         <Box sx={{ width: {xs: '90%', md: '50%'}, padding: 3, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: 3, gap: 2 }}>
           <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
           <Typography 
@@ -110,8 +106,6 @@ function Home() {
           >
             Habilidades
           </Typography>
-          {/* <Typography textAlign="justify" variant='h7'  color="#011F26" >
-          </Typography> */}
           <List sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, flexWrap: 'wrap', justifyContent: 'flex-start'}}>
             {
               habilidades.map((valor, i) => (
@@ -130,7 +124,6 @@ function Home() {
             padding: 3, 
             display:'flex', 
             justifyContent: 'flex-start',
-            // flexDirection: 'column', 
             borderRadius: 3, 
             gap: 2, 
             mb: 5 
@@ -172,11 +165,11 @@ function Home() {
             {
               certificados.map((valor, i) => (
                 <Link
+                  key={i}
                   href={ valor.link }
                   target='_blank'
                   display="flex"
                   justifyContent="flex-start"
-                  // alignItems="flex-start"
                   sx={{ width: { xs: '100%', md: '50%' }, textDecoration: 'none' }}
                 >
                   <Card sx={{ width: '70%' }}>

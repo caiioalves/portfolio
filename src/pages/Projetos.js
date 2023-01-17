@@ -1,4 +1,4 @@
-import { Box, Card, CardActions, CardContent, CardMedia, Slide, styled, Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, CardMedia, CircularProgress, Slide, styled, Typography } from "@mui/material";
 import Wallet from '../images/Wallet.jpg';
 import Trivia from '../images/Trivia.jpg';
 import Receitas from '../images/Receitas.jpg';
@@ -6,7 +6,7 @@ import Portfolio from '../images/Portfolio.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect, useRef } from "react";
 import Context from "../context/Context";
 
 const LinkRedirect = styled('a')({});
@@ -23,6 +23,7 @@ function Projetos () {
       colorTitle
     } = useContext(Context)
 
+    
     const projetos = [
       {
         imagem: Wallet,
@@ -84,6 +85,7 @@ function Projetos () {
         >
           {
             projetos.map((valor, i) => (
+              <Suspense fallback={<CircularProgress/>}>
               <Card key={i} sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
                   sx={{ height: 120 }}
@@ -114,6 +116,7 @@ function Projetos () {
                   }
                 </CardActions>
               </Card>
+              </Suspense>
               ))
             }
         </Box>

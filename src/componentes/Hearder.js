@@ -1,10 +1,11 @@
-import { AppBar, Box, Button, IconButton, Menu, MenuItem, Slide, Typography } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { AppBar, Box, Button, CircularProgress, IconButton, Menu, MenuItem, Slide, Typography } from "@mui/material";
+import { useContext, useEffect, useRef, useState } from "react";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import MenuIcon from '@mui/icons-material/Menu';
 import Context from "../context/Context";
 import { useNavigate } from "react-router-dom";
+import Spline from "@splinetool/react-spline";
 
 function Header () {
     const {
@@ -20,10 +21,8 @@ function Header () {
 
     const [transiçaoLight, setTransiçaoLight] = useState(true);
     const [transiçaoDark, setTransiçaoDark] = useState(false);
-    // const [teste, setTeste] = useState('light');
 
     const navigate =  useNavigate();
-    
     
     function handleClickMenu() {
       setOpen(true)
@@ -33,21 +32,8 @@ function Header () {
       setOpen(false)
     }, [setOpen])
 
-    // const teste = async () => {
-    //   const body = document.getElementsByTagName('body')[0];
-    //   setMode('light');
-    //   setText('textPrimary');
-    //   setColorH('primary.main');
-    //   setColorCard('#E7D7C6');
-    //   setIconButton('action');
-    //   body.style.backgroundColor = '#f0e7db';
-    // }
-
    const handleClickMode = async () => {
       const body = document.getElementsByTagName('body')[0];
-      // setTransiçao(true);
-          // setTransiçaoLight(false);
-          // setTimeout(() => {}, 1000)
           if(mode === 'dark') {
             setTransiçaoLight(!transiçaoLight);
             setTransiçaoDark(!transiçaoDark);
@@ -59,6 +45,8 @@ function Header () {
             setButtonMode('buttonsLight');
             setColorTf('#BF3604');
             setColorTitle('#BF3604');
+            light1.current.emitEvent('mouseDown');
+            light2.current.emitEvent('mouseDown');;
             body.style.backgroundColor = '#f0e7db';
           } else {
             setTransiçaoLight(!transiçaoLight);
@@ -71,10 +59,27 @@ function Header () {
             setButtonMode('buttonsDark');
             setColorTf('#04B2D9');
             setColorTitle('#04B2D9');
+            light1.current.emitEvent('mouseUp');
+            light2.current.emitEvent('mouseUp');
             body.style.backgroundColor = '#202023';
       }
     }
 
+    const [carregando, setCarregando] = useState(true);
+    
+    const light1 = useRef();
+    const light2 = useRef();
+
+    const onLoad = (spline) => {
+      setCarregando(false);
+
+      const objLight1 = spline.findObjectByName('luz');
+      const objLight2 = spline.findObjectByName('luz 2');
+
+      light1.current = objLight1;
+      light2.current = objLight2;
+    }
+    
     return (
         <Box>
         <AppBar
@@ -98,8 +103,6 @@ function Header () {
           </Typography>
         </Box>
           <Box>
-            {/* <Slide in={transiçao} direction="up" mountOnEnter unmountOnExit> */}
-            {/* <Collapse> */}
             {
               mode === 'dark' ? (
                 <Slide
@@ -121,8 +124,6 @@ function Header () {
                 </Slide>
               )
             }
-            {/* </Collapse> */}
-            {/* </Slide> */}
             <IconButton onClick={ handleClickMenu }>
               <MenuIcon
                 color={iconButton}
@@ -179,6 +180,10 @@ function Header () {
           </MenuItem>
         </Menu>
         </AppBar>
+        <Box display="flex" justifyContent="center" alignItems="center" mt={8} height="40vh">
+        { carregando === true && (<CircularProgress color="secondary" />)}
+        <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
+       </Box>
         </Box>
     )
 }
