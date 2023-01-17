@@ -116,7 +116,7 @@ function Contato () {
               InputLabelProps={{ style: {color: colorLabel} }}
               value={ message }
               onChange={(e) => {setMessage(e.target.value)}}
-              label="Message"
+              label="Mensagem"
               color={colorInput}
               multiline
               rows={6}
