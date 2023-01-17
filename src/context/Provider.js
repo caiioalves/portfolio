@@ -11,6 +11,7 @@ function Provider ({children}) {
     const [buttonMode, setButtonMode] = useState('buttonsLight');
     const [colorTf, setColorTf] = useState('#BF3604');
     const [transiçao, setTransiçao] = useState(true);
+    const [colorTitle, setColorTitle] = useState('#BF3604');
 
     const state = {
       mode, setMode,
@@ -21,7 +22,8 @@ function Provider ({children}) {
       iconButton, setIconButton,
       buttonMode, setButtonMode,
       colorTf, setColorTf,
-      transiçao, setTransiçao
+      transiçao, setTransiçao,
+      colorTitle, setColorTitle
     }
 
     return(

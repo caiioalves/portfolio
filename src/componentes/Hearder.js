@@ -15,7 +15,7 @@ function Header () {
       setColorCard,
       iconButton, setIconButton,
       buttonMode, setButtonMode,
-      setColorTf
+      setColorTf, setColorTitle
     } = useContext(Context);
 
     const [transiçaoLight, setTransiçaoLight] = useState(true);
@@ -58,6 +58,7 @@ function Header () {
             setIconButton('action');
             setButtonMode('buttonsLight');
             setColorTf('#BF3604');
+            setColorTitle('#BF3604');
             body.style.backgroundColor = '#f0e7db';
           } else {
             setTransiçaoLight(!transiçaoLight);
@@ -69,6 +70,7 @@ function Header () {
             setIconButton('primary');
             setButtonMode('buttonsDark');
             setColorTf('#04B2D9');
+            setColorTitle('#04B2D9');
             body.style.backgroundColor = '#202023';
       }
     }

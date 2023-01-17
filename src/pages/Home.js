@@ -23,7 +23,7 @@ const certificados = [
 
 function Home() {
 
-  const { text, colorCard, transiçao ,setTransiçao} = useContext(Context);
+  const { text, colorCard, transiçao ,setTransiçao, colorTitle} = useContext(Context);
 
   const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks',
   'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub',
@@ -69,7 +69,7 @@ function Home() {
           gap: 2 }}
         >
           <Typography 
-            color={text} 
+            color={colorTitle} 
             sx={{ textDecoration: "underline", 
             textUnderlineOffset: 5, textDecorationThickness: 3}} 
             fontWeight="bold" 
@@ -98,7 +98,7 @@ function Home() {
           }} 
         >
           <Typography 
-            color={text} 
+            color={colorTitle} 
             sx={{ 
               textDecoration: "underline", 
               textUnderlineOffset: 5, 
@@ -143,7 +143,7 @@ function Home() {
             width="100%"
           >
             <Typography
-              color={text}
+              color={colorTitle}
               sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}}
               fontWeight="bold"
               variant="h6"

@@ -22,7 +22,7 @@ function Contato () {
   
   const {
     text, buttonMode,
-    transiçao, setTransiçao
+    transiçao, setTransiçao, colorTitle
   } = useContext(Context);
   
   const [colorLabel, setColorLabel] = useState('black');
@@ -73,7 +73,7 @@ function Contato () {
         <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
           <Typography
             variant="h6" 
-            color={text}
+            color={colorTitle}
             sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3, mb: 3}}
             fontWeight="bold"
           >
