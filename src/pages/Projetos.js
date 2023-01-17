@@ -19,7 +19,8 @@ function Projetos () {
       text,
       buttonMode, 
       setTransiçao,
-      transiçao
+      transiçao,
+      colorTitle
     } = useContext(Context)
 
     const projetos = [
@@ -62,16 +63,11 @@ function Projetos () {
       >
         <Box sx={{ mt: {xs: -5, md: -1} }}>
           <Typography
-            color={text}
-            sx={{
-              bgcolor: colorCard, 
-              padding: 0.5,
-              paddingLeft: 3, 
-              paddingRight: 3, 
-              borderRadius: 2 
-            }} 
+            color={colorTitle}
+            sx={{ textDecoration: "underline", textUnderlineOffset: 5, textDecorationThickness: 3}}
+            alignSelf="flex-start"
             fontWeight="bold" 
-            variant="h7"
+            variant="h6"
           >
             Projetos
           </Typography>

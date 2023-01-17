@@ -43,10 +43,10 @@ function Home() {
           <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
         </Box> */}
         {/* <Modelo3D/> */}
-        <Box sx={{padding: 3, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: 3, gap: 2 }}>
+        <Box sx={{ width: {xs: '90%', md: '50%'}, padding: 3, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: 3, gap: 2 }}>
           <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
           <Typography 
-            color={text} 
+            color="textSecondary" 
             textAlign="center" 
             sx={{width: {xs: '75%', md: '90%'}}} 
             fontWeight="bold"  
@@ -55,7 +55,7 @@ function Home() {
             paddingLeft={3} 
             borderRadius={2} 
             variant="h7"
-            bgcolor={colorCard}
+            bgcolor={colorTitle}
           >
             Olá, eu sou desenvolvedor web front-end!
           </Typography>
@@ -154,7 +154,7 @@ function Home() {
             <Typography
               color={text}
               mt={3}
-              textAlign="center"
+              textAlign="flex-start"
               variant="h7"
             >
               Curso de Desenvolvimento Web - Trybe
