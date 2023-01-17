@@ -70,14 +70,14 @@ function Header () {
     const light1 = useRef();
     const light2 = useRef();
 
-    const onLoad = (spline) => {
-      setCarregando(false);
-
+    const onLoad = (spline) => {   
       const objLight1 = spline.findObjectByName('luz');
       const objLight2 = spline.findObjectByName('luz 2');
-
+      
       light1.current = objLight1;
       light2.current = objLight2;
+      
+      setCarregando(false);
     }
     
     return (

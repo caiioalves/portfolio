@@ -1,12 +1,12 @@
-import { Box, Card, CardActions, CardContent, CardMedia, CircularProgress, Slide, styled, Typography } from "@mui/material";
-import Wallet from '../images/Wallet.jpg';
-import Trivia from '../images/Trivia.jpg';
-import Receitas from '../images/Receitas.jpg';
-import Portfolio from '../images/Portfolio.jpg';
+import { Box, Card, CardActions, CardContent, CardMedia, Slide, styled, Typography } from "@mui/material";
+import Wallet from '../images/Wallet.png';
+import Trivia from '../images/Trivia.png';
+import Receitas from '../images/Receitas.png';
+import Portfolio from '../images/Portfolio.png';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import { Link } from "react-router-dom";
-import { Suspense, useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import Context from "../context/Context";
 
 const LinkRedirect = styled('a')({});
@@ -78,17 +78,16 @@ function Projetos () {
           justifyContent="center"
           alignItems="center" 
           flexWrap="wrap"
-          sx={{ flexDirection: { xs: 'column', md: 'row' }, width: '50%' }} 
+          sx={{ flexDirection: { xs: 'column', md: 'row' }, width: { xs: '75%', md: '50%' } }} 
           gap={4} 
           mt={5}
           mb={5}
         >
           {
             projetos.map((valor, i) => (
-              <Suspense fallback={<CircularProgress/>}>
               <Card key={i} sx={{ backgroundColor: colorCard, width: {xs: '100%', md: '40%'}}}>
                 <CardMedia
-                  sx={{ height: 120 }}
+                  sx={{ height: 170 }}
                   image={valor.imagem}
                 />
                 <CardContent sx={{ display: 'flex', justifyContent: 'center', padding: 1}}>
@@ -116,7 +115,6 @@ function Projetos () {
                   }
                 </CardActions>
               </Card>
-              </Suspense>
               ))
             }
         </Box>
