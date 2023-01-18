@@ -16,7 +16,7 @@ function Header () {
       setColorCard,
       iconButton, setIconButton,
       buttonMode, setButtonMode,
-      setColorTf, setColorTitle
+      setColorTf, setColorTitle,
     } = useContext(Context);
 
     const [transiçaoLight, setTransiçaoLight] = useState(true);
@@ -81,7 +81,7 @@ function Header () {
     }
     
     return (
-        <Box>
+        <Box width="100%"> 
         <AppBar
           sx={{ 
             display: 'flex', 
@@ -180,7 +180,7 @@ function Header () {
           </MenuItem>
         </Menu>
         </AppBar>
-        <Box display="flex" justifyContent="center" alignItems="center" mt={8} height="40vh">
+        <Box width="100%" display="flex" justifyContent="center" alignItems="center" mt={8} height="40vh">
         { carregando === true && (<CircularProgress color="secondary" />)}
         <Spline scene="https://prod.spline.design/7mAcYGRsPWhK3Tds/scene.splinecode" onLoad={onLoad}/>
        </Box>

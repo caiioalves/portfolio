@@ -68,9 +68,10 @@ function Contato () {
   };
 
     return (
-      <Box height="100vh" display="flex" justifyContent="center" alignItems="center" sx={{ mt: {xs: -15, md: -10,} }}>
+      <Box mt={-2} height="100vh" display="flex" justifyContent="center"
+      >
         <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
-        <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3} >
+        <Box width="100%" display="flex" flexDirection="column" alignItems="center" gap={3}>
           <Typography
             variant="h6" 
             color={colorTitle}

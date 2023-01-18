@@ -5,8 +5,6 @@ import '../App.css';
 import { useContext, useEffect } from 'react';
 import { Avatar, Box, Card, CardContent, CardMedia, Link, List, ListItem, Slide, Typography } from '@mui/material';
 import Context from '../context/Context';
-// import Modelo3D from '../componentes/Modelo3D';
-// import Spline from '@splinetool/react-spline';
 
 const certificados = [
   {
@@ -38,23 +36,21 @@ function Home() {
       height="100vh"
     >
       <Slide appear={true} in={transiçao} direction="up" mountOnEnter unmountOnExit>
-      <Box sx={{ mt: {xs: -5, md: 0} }} display="flex" alignItems="center" gap={6} flexDirection="column">
-        <Box sx={{ width: {xs: '90%', md: '50%'}, padding: 3, display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: 3, gap: 2 }}>
-          <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
+      <Box sx={{ mt: {xs: -5, md: -3} }} display="flex" alignItems="center" flexDirection="column">
+        <Box gap={2} sx={{ width: {xs: '75%', md: '50%'}, padding: 3, display:'flex', flexDirection: {xs: 'column', md: 'row'}, justifyContent: 'center', alignItems: 'center', borderRadius: 3 }}>
           <Typography 
             color="textSecondary" 
             textAlign="center" 
-            sx={{width: {xs: '75%', md: '90%'}}} 
+            sx={{width: {xs: '100%', md: '65%'}}} 
             fontWeight="bold"  
-            padding={0.5} 
-            paddingRight={3} 
-            paddingLeft={3} 
+            padding={1} 
             borderRadius={2} 
             variant="h7"
             bgcolor={colorTitle}
           >
             Olá, eu sou desenvolvedor web front-end!
           </Typography>
+          <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
         </Box>
         <Box 
           sx={{ width: {xs: '75%', md: '50%'}, 
@@ -65,7 +61,7 @@ function Home() {
           gap: 2 }}
         >
           <Typography 
-            color={colorTitle} 
+            color={colorTitle}
             sx={{ textDecoration: "underline", 
             textUnderlineOffset: 5, textDecorationThickness: 3}} 
             fontWeight="bold" 
@@ -75,10 +71,10 @@ function Home() {
             Sobre mim
           </Typography>
           <Typography textAlign="justify" variant='h7'  color={text} >
-          Olá, meu nome é Caio Alexandre, tenho  20 anos de idade, e sou natural de Belo Horizonte/MG. Na minha infância,
+          Meu nome é Caio Alexandre, tenho  20 anos de idade, e sou natural de Belo Horizonte/MG. Na minha infância,
           sempre apresentei interesse em criar, inventar e reinventar diferentes objetos. Esse meu entusiasmo se 
-          desenvolveu, e hoje aplico as minhas habilidades no âmbito virtual, especificamente na área da programação. 
-          Já que por meio dela, consigo expressar minha imaginação e vontade na elaboração de diversos códigos. O meu 
+          desenvolveu, e hoje aplico as minhas habilidades no área da tecnologia, mais especificamente na programação. 
+          Já que por meio dela, consigo expressar minha imaginação e vontade na síntese de diversos códigos. O meu 
           principal objetivo é evoluir cada vez mais como programador, criando e aprimorando códigos que possam impactar 
           a vida de pessoas da melhor forma possível. Sendo assim, estou trilhando esse caminho!
           </Typography>
@@ -90,7 +86,7 @@ function Home() {
             display:'flex', 
             flexDirection: 'column', 
             borderRadius: 3, 
-            gap: 2
+            // gap: 1
           }} 
         >
           <Typography 
