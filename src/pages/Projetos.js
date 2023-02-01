@@ -28,8 +28,8 @@ function Projetos () {
       {
         imagem: Wallet,
         texto: 'Controle de gastos | Full-Stack',
-        linkGitHub: 'https://github.com/caiioalves/wallet',
-        linkSite: 'https://caio-wallet.netlify.app/'
+        linkGitHub: 'https://github.com/caiioalves/expense-control',
+        linkSite: 'https://caio-expense-control.vercel.app'
       },
       {
         imagem: Trivia,
