@@ -86,7 +86,6 @@ function Home() {
             display:'flex', 
             flexDirection: 'column', 
             borderRadius: 3, 
-            // gap: 1
           }} 
         >
           <Typography 

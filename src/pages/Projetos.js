@@ -27,25 +27,25 @@ function Projetos () {
     const projetos = [
       {
         imagem: Wallet,
-        texto: 'Wallet',
+        texto: 'Controle de gastos | Full-Stack',
         linkGitHub: 'https://github.com/caiioalves/wallet',
         linkSite: 'https://caio-wallet.netlify.app/'
       },
       {
         imagem: Trivia,
-        texto: 'Jodo de Trivia',
+        texto: 'Jodo de Trivia | Front-end',
         linkGitHub: 'https://github.com/caiioalves/trivia-game',
         linkSite: 'https://caio-trivia.vercel.app/'
       },
       {
         imagem: Receitas,
-        texto: 'App de Receitas',
+        texto: 'App de Receitas | Front-end',
         linkGitHub: 'https://github.com/caiioalves/app-receitas',
         linkSite: 'https://caio-receitas.vercel.app/'
       },
       {
         imagem: Portfolio,
-        texto: 'Portfólio',
+        texto: 'Portfólio | Front-end',
         linkGitHub: 'https://github.com/caiioalves/portfolio',
         linkSite: '/'  
       }
