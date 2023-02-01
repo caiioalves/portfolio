@@ -78,7 +78,7 @@ function Projetos () {
           justifyContent="center"
           alignItems="center" 
           flexWrap="wrap"
-          sx={{ flexDirection: { xs: 'column', md: 'row' }, width: { xs: '75%', md: '50%' } }} 
+          sx={{ flexDirection: { xs: 'column', md: 'row' }, width: { xs: '75%', md: '60%' } }} 
           gap={4} 
           mt={5}
           mb={5}
