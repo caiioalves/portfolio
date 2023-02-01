@@ -24,7 +24,7 @@ function Home() {
   const { text, transiçao ,setTransiçao, colorTitle} = useContext(Context);
 
   const habilidades = ['Html', 'CSS', 'JavaScript', 'Testes Unitários','React', 'Redux', 'Context API', 'Hooks',
-  'Material UI' ,'React Testing Library', 'MySQL', 'Docker', 'Node.js', 'Express', 'Api Rest', 'Git', 'GitHub',
+  'Material UI' ,'React Testing Library', 'Docker', 'Node.js', 'Express', 'Api Rest', 'MySQL', 'Sequelize', 'Git', 'GitHub',
   'Terminal Linux' ];
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function Home() {
             variant="h7"
             bgcolor={colorTitle}
           >
-            Olá, eu sou desenvolvedor web front-end!
+            Olá, eu sou desenvolvedor web full-stack!
           </Typography>
           <Avatar sx={{ width: 90, height: 90, border: '3px solid whitesmoke' }} src={ imgProfile } alt='' />
         </Box>
