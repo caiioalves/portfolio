@@ -72,11 +72,11 @@ function Home() {
           </Typography>
           <Typography textAlign="justify" variant='h7'  color={text} >
           Meu nome é Caio Alexandre, tenho  20 anos de idade, e sou natural de Belo Horizonte/MG. Na minha infância,
-          sempre apresentei interesse em criar, inventar e reinventar diferentes objetos. Esse meu entusiasmo se 
+          sempre apresentei uma imaginação muito fértil, interesse em criar, inventar e reinventar coisas. Esse meu entusiasmo se 
           desenvolveu, e hoje aplico as minhas habilidades no área da tecnologia, mais especificamente na programação. 
-          Já que por meio dela, consigo expressar minha imaginação e vontade na síntese de diversos códigos. O meu 
+          Já que por meio dela, consigo expressar minha imaginação e vontade na síntese de códigos. O meu 
           principal objetivo é evoluir cada vez mais como programador, criando e aprimorando códigos que possam impactar 
-          a vida de pessoas da melhor forma possível. Sendo assim, estou trilhando esse caminho!
+          a vida de pessoas da melhor forma possível!
           </Typography>
         </Box>
         <Box 
